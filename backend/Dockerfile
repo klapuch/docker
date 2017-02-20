@@ -7,6 +7,7 @@ RUN apt-get install -y sudo git
 RUN apt-get install -y libmcrypt-dev && docker-php-ext-install mcrypt
 RUN apt-get install -y libcurl4-openssl-dev && docker-php-ext-install curl
 RUN apt-get install -y libpq-dev && docker-php-ext-install pdo pdo_pgsql
+RUN apt-get install -y zip unzip && docker-php-ext-install zip
 
 RUN apt-get clean
 
