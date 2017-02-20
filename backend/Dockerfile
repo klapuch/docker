@@ -11,7 +11,6 @@ RUN apt-get install -y zip unzip && docker-php-ext-install zip
 
 RUN apt-get clean
 
-RUN docker-php-ext-install cgi
 RUN docker-php-ext-install mbstring
 RUN docker-php-ext-install opcache
 RUN docker-php-ext-install json
