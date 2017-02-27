@@ -8,7 +8,8 @@ RUN apt-get install -y libmcrypt-dev && docker-php-ext-install mcrypt
 RUN apt-get install -y libpq-dev && docker-php-ext-install pdo_pgsql
 RUN apt-get install -y zip unzip && docker-php-ext-install zip
 
-RUN echo -e "en_US.UTF-8 UTF-8\ncs_CZ.UTF-8 UTF-8" > /etc/locale.gen
+RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
+RUN echo "cs_CZ.UTF-8 UTF-8" >> /etc/locale.gen
 RUN apt-get install -y locales
 
 RUN apt-get clean
