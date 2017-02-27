@@ -13,7 +13,6 @@ RUN apt-get install -y locales
 
 RUN apt-get clean
 
-RUN docker-php-ext-install opcache
 RUN docker-php-ext-install gettext
 
 RUN curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer
