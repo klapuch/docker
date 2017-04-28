@@ -1,6 +1,6 @@
 FROM debian:jessie
 
-RUN apt-get update && apt-get install -y sudo curl apt-transport-https
+RUN apt-get update -qq && apt-get install -y sudo curl apt-transport-https
 
 RUN curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash - \
 	&& apt-get install -y nodejs \
