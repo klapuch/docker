@@ -1,4 +1,5 @@
 FROM php:7.1-apache
+
 RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && echo "cs_CZ.UTF-8 UTF-8" >> /etc/locale.gen
 RUN apt-get update -qq && apt-get install -y sudo git locales apt-transport-https \
 	&& apt-get install -y libmcrypt-dev && docker-php-ext-install mcrypt \
@@ -16,4 +17,5 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
 	&& echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list \
 	&& apt-get update && apt-get install yarn
 RUN yarn global add gulp
+
 RUN apt-get clean
